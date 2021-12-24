@@ -38,7 +38,7 @@ for i in range(1, number_of_games+1):
             if not nim.allEmpty() and reward != q.illegalReward:
                 nim.playerTurnDumb()
             nextState = q.states.index(nim.getState())
-            q.set_nextState(nextState)
+            q.nextState = q.states.index(nim.getState())
             q.update_table()
 
         else:
@@ -46,7 +46,7 @@ for i in range(1, number_of_games+1):
                 nim.playerTurnDumb()                
             if start != 0 and not nim.allEmpty():
                 nextState = q.states.index(nim.getState())
-                q.set_nextState(nextState)
+                q.nextState = q.states.index(nim.getState())
                 q.update_table()
             if not nim.allEmpty():
                 q.stateIndex = q.states.index(nim.getState())
@@ -65,7 +65,7 @@ for i in range(1, number_of_games+1):
         print("==============================Agent lost " + str(i) + " =========================")
     nextState = q.states.index(nim.getState())
     q.reward = reward
-    q.set_nextState(nextState)
+    q.nextState = q.states.index(nim.getState())
     q.update_table()
 
 

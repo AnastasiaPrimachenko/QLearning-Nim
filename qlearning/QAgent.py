@@ -45,9 +45,7 @@ class QLearning(object):
             self.q_table[self.stateIndex, self.actionIndex] = self.newValue
         else:
             self.q_table[self.stateIndex, self.actionIndex] = self.illegalReward
-    
-    def set_nextState(self, state):
-        self.nextState = state
+
 
     def make_move(self, nim):
         self.reward = 0
